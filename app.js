@@ -1,5 +1,5 @@
 import { fetchData } from "./firebase.js";
-import { checkForMatch } from "./DO-NOT-LOOK-HERE/checkMatch.js";
+import { checkForMatch } from "./Noob-if-you-look/checkMatch.js";
 
 export async function encryptPassword(input) {
 	const encoder = new TextEncoder();
