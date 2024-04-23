@@ -57,11 +57,11 @@ export const fetchData = async () => {
 				});
 
 				// Log the user:key pair
-				console.log(
-					"User:",
-					usernameInBase64ThenHexaThenBase32 + "\n" + "Password:",
-					encrypted_password
-				);
+				// console.log(
+				// 	"User:",
+				// 	usernameInBase64ThenHexaThenBase32 + "\n" + "Password:",
+				// 	encrypted_password
+				// );
 			});
 			// Now 'users' array contains all the user objects with key-value pair under the "Users" node
 
