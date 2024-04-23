@@ -46,7 +46,7 @@ main {
 	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
-	gap:10px;
+	gap: 10px;
 	margin-bottom: 15px;
 }
 .inputfield {
@@ -63,8 +63,8 @@ main {
 }
 
 .login-button {
-	background-color: #4CB5F9;
-	border:none;
+	background-color: #4cb5f9;
+	border: none;
 	border-radius: 8px;
 	width: 270px;
 	height: 32px;
@@ -84,7 +84,7 @@ main {
 	line-height: 15px;
 	display: flex;
 	align-items: center;
-	gap: 20px
+	gap: 20px;
 }
 
 .line {
@@ -105,4 +105,74 @@ main {
 
 .facebook-icon {
 	height: 16px;
+}
+
+.forgotPass {
+	color: #00376b;
+	font-size: 12px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.report {
+	margin-top: 30px;
+	color: rgb(115, 115, 115);
+	font-size: 12px;
+	text-align: center;
+	max-width: 85%;
+}
+
+.report__span {
+	color: #00376b;
+	cursor: pointer;
+}
+
+.report__span:hover {
+	text-decoration: underline;
+}
+
+.underLogin {
+	width: 350px;
+	margin-top: 10px;
+	line-height: 18px;
+	font-size: 14px;
+	text-align: center;
+	border: 1px solid var(--border-color-gray);
+	padding: 20px 30px 20px 30px;
+}
+
+.signUp {
+	color: #0095f6;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.getApp-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	justify-items: center;
+	width: 350px;
+	padding: 20px 30px 20px 30px;
+}
+
+.getApp-container p {
+	text-align: center;
+}
+
+.download-btns {
+	display: flex;
+	justify-content: space-around;
+	justify-items: center;
+}
+
+.bn44 {
+	width: 134.28px;
+	height: 40px;
+}
+
+.bn45 {
+	width: 134.28px;
+	height: 40px;
 }
