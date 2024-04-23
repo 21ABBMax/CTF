@@ -1,3 +1,6 @@
+const usernameInput = document.getElementById("usernameInput");
+const passwordInput = document.getElementById("passwordInput");
+
 export function checkForMatch(username, password, users) {
 	console.log("Received username:", username);
 	console.log("Received password:", password);
