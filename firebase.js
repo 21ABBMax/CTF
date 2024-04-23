@@ -40,8 +40,8 @@ export const fetchData = async () => {
 	try {
 		// Get the data snapshot once
 		const usersSnapshot = await get(usersRef);
-		// Initialize an empty array to store user objects as key-value pairs
-		const users = [];
+		// Initialize an empty object to store user objects as key-value pairs
+		const users = {};
 		// Extract data from the users snapshot
 		if (usersSnapshot.exists()) {
 			// Loop through each child node under the "Users" node
@@ -50,20 +50,10 @@ export const fetchData = async () => {
 				const usernameInBase64ThenHexaThenBase32 = userSnapshot.key;
 				// Get the value (user data) for each child
 				const encrypted_password = userSnapshot.val();
-				// Construct a key-value pair object and push it into the array
-				users.push({
-					user: usernameInBase64ThenHexaThenBase32,
-					password: encrypted_password,
-				});
-
-				// Log the user:key pair
-				// console.log(
-				// 	"User:",
-				// 	usernameInBase64ThenHexaThenBase32 + "\n" + "Password:",
-				// 	encrypted_password
-				// );
+				// Add the key-value pair to the users object
+				users[usernameInBase64ThenHexaThenBase32] = encrypted_password;
 			});
-			// Now 'users' array contains all the user objects with key-value pair under the "Users" node
+			// Now 'users' object contains all the user objects with key-value pair under the "Users" node
 
 			// Return the fetched data
 			return users;
@@ -76,6 +66,3 @@ export const fetchData = async () => {
 		return null; // Return null in case of an error
 	}
 };
-
-// Call the fetchData function to retrieve data
-fetchData();
