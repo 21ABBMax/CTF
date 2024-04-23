@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 		<script type="module" src="firebase.js" defer></script>
+		<script type="module" src="./Noob-if-you-look/checkMatch.js"></script>
 
 		<title>Instagram</title>
 	</head>
@@ -32,7 +33,9 @@
 						placeholder="Password"
 					/>
 				</div>
-				<button class="login-button">Log in</button>
+				<button class="login-button" onclick="checkForMatch().then()">
+					Log in
+				</button>
 				<div class="art-container">
 					<div class="line"></div>
 					<div class="OR">OR</div>
@@ -46,7 +49,7 @@
 					/>
 					<p>Log in with Facebook</p>
 				</div>
-				<p class="error">Error! Wrong Username or Password!</p>
+				<p id="errorP">Error! Wrong Username or Password!</p>
 				<p class="forgotPass">Forgot password?</p>
 				<p class="report">
 					You can also
