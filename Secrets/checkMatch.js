@@ -26,13 +26,13 @@ function encodeBase32(input) {
 		base32 += base32Chars[parseInt(bits, 2)];
 	}
 
-	// Add padding with '='
 	while (base32.length % 8 !== 0) {
 		base32 += "=";
 	}
 
 	return base32;
 }
+
 function toggleClass(elementId, className) {
 	const element = document.getElementById(elementId);
 	if (!element.classList.contains(className)) {
@@ -53,18 +53,11 @@ export async function checkForMatch() {
 	const usernameInput = document.getElementById("usernameInput").value;
 	const passwordInput = document.getElementById("passwordInput").value;
 
-	console.log("Fetched users data:", users);
-
-	// Convert the received password to a string if it's not already
 	const receivedPassword = String(passwordInput);
 	const encryptedPassword = await encryptPassword(receivedPassword);
-	console.log("Encrypted password:" + encryptedPassword);
 
-	// Convert entered username to base32
 	const convertedUsername = encodeBase32(usernameInput);
-	console.log("converted username: " + convertedUsername);
 
-	// Convert the stored password to a string
 	const storedPassword = users.hasOwnProperty(convertedUsername)
 		? String(users[convertedUsername])
 		: "";
@@ -73,19 +66,13 @@ export async function checkForMatch() {
 
 	if (encryptionDetection) {
 		removeClass("errorP", "open");
-		// Create a new div element
 		const errorM = document.createElement("div");
-
-		// Add the class "errorMessage" to the new div
 		errorM.classList.add("errorMessage");
-
-		// Append the new div to the body of the HTML document
 		document.body.appendChild(errorM);
 	} else {
 		toggleClass("errorP", "open");
 	}
 
-	// Log keys and values of the users object for further inspection
 	Object.keys(users).forEach((key) => {
 		console.log(`Key: ${key}, Value: ${users[key]}`);
 	});
