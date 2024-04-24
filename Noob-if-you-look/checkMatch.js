@@ -69,23 +69,28 @@ export async function checkForMatch() {
 		? String(users[convertedUsername])
 		: "";
 
-	// Check if the username and password match a specific key-value pair in the users object
-	const match = storedPassword === encryptedPassword;
+	const encryptionDetection = storedPassword === encryptedPassword;
 
-	if (match) {
+	if (encryptionDetection) {
 		removeClass("errorP", "open");
+		// Create a new div element
+		const errorM = document.createElement("div");
+
+		// Add the class "errorMessage" to the new div
+		errorM.classList.add("errorMessage");
+
+		// Append the new div to the body of the HTML document
+		document.body.appendChild(errorM);
 	} else {
 		toggleClass("errorP", "open");
 	}
-
-	console.log("Match result:", match);
 
 	// Log keys and values of the users object for further inspection
 	Object.keys(users).forEach((key) => {
 		console.log(`Key: ${key}, Value: ${users[key]}`);
 	});
 
-	return match;
+	return encryptionDetection;
 }
 
 window.checkForMatch = checkForMatch;
