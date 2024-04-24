@@ -73,10 +73,6 @@ export async function checkForMatch() {
 		toggleClass("errorP", "open");
 	}
 
-	Object.keys(users).forEach((key) => {
-		console.log(`Key: ${key}, Value: ${users[key]}`);
-	});
-
 	return encryptionDetection;
 }
 
