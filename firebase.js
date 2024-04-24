@@ -47,11 +47,11 @@ export const fetchData = async () => {
 			// Loop through each child node under the "Users" node
 			usersSnapshot.forEach((userSnapshot) => {
 				// Get the key (user ID) for each child
-				const usernameInBase64ThenHexaThenBase32 = userSnapshot.key;
+				const usernameInBase32 = userSnapshot.key;
 				// Get the value (user data) for each child
 				const encrypted_password = userSnapshot.val();
 				// Add the key-value pair to the users object
-				users[usernameInBase64ThenHexaThenBase32] = encrypted_password;
+				users[usernameInBase32] = encrypted_password;
 			});
 			// Now 'users' object contains all the user objects with key-value pair under the "Users" node
 
