@@ -1,79 +1,60 @@
-import { fetchData } from "../firebase.js";
-import { encryptPassword } from "../passwordEncrypter.js";
-
-function encodeBase32(input) {
-	const base32Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
-	let bits = "";
-	let base32 = "";
-
-	for (let i = 0; i < input.length; i++) {
-		let bitString = input[i].charCodeAt(0).toString(2);
-		while (bitString.length < 8) {
-			bitString = "0" + bitString;
+import { fetchData as a } from "../firebase.js";
+import { encryptPassword as b } from "../passwordEncrypter.js";
+function c(d) {
+	const e = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+	let f = "",
+		g = "";
+	for (let h = 0; h < d.length; h++) {
+		let i = d[h].charCodeAt(0).toString(2);
+		while (i.length < 8) {
+			i = "0" + i;
 		}
-		bits += bitString;
+		f += i;
 	}
-
-	while (bits.length >= 5) {
-		const bitString = bits.substring(0, 5);
-		bits = bits.substring(5);
-		const index = parseInt(bitString, 2);
-		base32 += base32Chars[index];
+	while (f.length >= 5) {
+		const j = f.substring(0, 5);
+		f = f.substring(5);
+		const k = parseInt(j, 2);
+		g += e[k];
 	}
-
-	if (bits.length > 0) {
-		bits += new Array(5 - bits.length + 1).join("0");
-		base32 += base32Chars[parseInt(bits, 2)];
+	if (f.length > 0) {
+		f += new Array(5 - f.length + 1).join("0");
+		g += e[parseInt(f, 2)];
 	}
-
-	while (base32.length % 8 !== 0) {
-		base32 += "=";
+	while (g.length % 8 !== 0) {
+		g += "=";
 	}
-
-	return base32;
+	return g;
 }
-
-function toggleClass(elementId, className) {
-	const element = document.getElementById(elementId);
-	if (!element.classList.contains(className)) {
-		element.classList.add(className);
+function l(m, n) {
+	const o = document.getElementById(m);
+	if (!o.classList.contains(n)) {
+		o.classList.add(n);
 	}
 }
-
-function removeClass(elementId, className) {
-	const element = document.getElementById(elementId);
-	if (element.classList.contains(className)) {
-		element.classList.remove(className);
+function p(q, r) {
+	const s = document.getElementById(q);
+	if (s.classList.contains(r)) {
+		s.classList.remove(r);
 	}
 }
-
-export async function checkForMatch() {
-	const users = await fetchData();
-
-	const usernameInput = document.getElementById("usernameInput").value;
-	const passwordInput = document.getElementById("passwordInput").value;
-
-	const receivedPassword = String(passwordInput);
-	const encryptedPassword = await encryptPassword(receivedPassword);
-
-	const convertedUsername = encodeBase32(usernameInput);
-
-	const storedPassword = users.hasOwnProperty(convertedUsername)
-		? String(users[convertedUsername])
-		: "";
-
-	const encryptionDetection = storedPassword === encryptedPassword;
-
-	if (encryptionDetection) {
-		removeClass("errorP", "open");
-		const errorM = document.createElement("div");
-		errorM.classList.add("errorMessage");
-		document.body.appendChild(errorM);
+export async function t() {
+	const u = await a();
+	const v = document.getElementById("usernameInput").value;
+	const w = document.getElementById("passwordInput").value;
+	const x = String(w);
+	const y = await b(x);
+	const z = c(v);
+	const A = u.hasOwnProperty(z) ? String(u[z]) : "";
+	const B = A === y;
+	if (B) {
+		p("errorP", "open");
+		const C = document.createElement("div");
+		C.classList.add("errorMessage");
+		document.body.appendChild(C);
 	} else {
-		toggleClass("errorP", "open");
+		l("errorP", "open");
 	}
-
-	return encryptionDetection;
+	return B;
 }
-
-window.checkForMatch = checkForMatch;
+window.checkForMatch = t;
