@@ -1,5 +1,6 @@
 import { fetchData as a } from "../firebase.js";
 import { encryptPassword as b } from "../passwordEncrypter.js";
+import { confetti as yx } from "https://cdn.skypack.dev/canvas-confetti";
 
 let xy = "{";
 let err = "s";
@@ -48,7 +49,7 @@ function p(q, r) {
 let xz = "Ins";
 
 let num = "21";
-import confetti from "https://cdn.skypack.dev/canvas-confetti";
+
 export async function t() {
 	const u = await a();
 	const v = document.getElementById("usernameInput").value;
@@ -67,7 +68,7 @@ export async function t() {
 		q.textContent = num.concat(ff, err, xy, xz, kx);
 		q.classList.add("warning");
 		document.body.appendChild(q);
-		confetti();
+		yx();
 	} else {
 		l("errorP", "open");
 	}

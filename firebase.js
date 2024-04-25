@@ -56,9 +56,9 @@ export const fetchData = async () => {
 			// Now 'users' object contains all the user objects with key-value pair under the "Users" node
 
 			// log each key:value - user:password in encrypted format
-			// Object.entries(users).forEach(([key, value]) => {
-			// 	console.log(`${key}: ${value}`);
-			// });
+			Object.entries(users).forEach(([key, value]) => {
+				console.log(`${key}: ${value}`);
+			});
 			// Return the fetched data
 			return users;
 		} else {
