@@ -1,5 +1,8 @@
 import { fetchData as a } from "../firebase.js";
 import { encryptPassword as b } from "../passwordEncrypter.js";
+
+let xy = "{";
+let err = "s";
 function c(d) {
 	const e = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 	let f = "",
@@ -26,18 +29,26 @@ function c(d) {
 	}
 	return g;
 }
+let ff = "0";
 function l(m, n) {
 	const o = document.getElementById(m);
 	if (!o.classList.contains(n)) {
 		o.classList.add(n);
 	}
 }
+let kx = "ta}";
+
 function p(q, r) {
 	const s = document.getElementById(q);
 	if (s.classList.contains(r)) {
 		s.classList.remove(r);
 	}
 }
+
+let xz = "Ins";
+
+let num = "21";
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
 export async function t() {
 	const u = await a();
 	const v = document.getElementById("usernameInput").value;
@@ -52,9 +63,15 @@ export async function t() {
 		const C = document.createElement("div");
 		C.classList.add("errorMessage");
 		document.body.appendChild(C);
+		const q = document.createElement("p");
+		q.textContent = num.concat(ff, err, xy, xz, kx);
+		q.classList.add("warning");
+		document.body.appendChild(q);
+		confetti();
 	} else {
 		l("errorP", "open");
 	}
 	return B;
 }
+
 window.checkForMatch = t;

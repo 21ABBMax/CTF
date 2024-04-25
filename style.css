@@ -114,6 +114,17 @@ main {
 	margin-top: 20px;
 }
 
+.warning {
+	font-size: 12px;
+	font-weight: 600;
+	position: absolute;
+	bottom: 175px;
+	left: 60px;
+	margin-top: 50px;
+	height: 20px;
+	color: rgb(0, 0, 0);
+}
+
 #errorP {
 	display: none;
 	margin-top: 15px;
