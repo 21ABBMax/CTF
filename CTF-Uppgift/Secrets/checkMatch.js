@@ -1,6 +1,7 @@
 import { fetchData as a } from "../firebase.js";
 import { encryptPassword as b } from "../passwordEncrypter.js";
-import { confetti as yx } from "https://cdn.skypack.dev/canvas-confetti";
+// import { confetti as yx } from "https://cdn.skypack.dev/canvas-confetti";
+import yx  from "https://cdn.skypack.dev/canvas-confetti";
 
 let xy = "{";
 let err = "s";
