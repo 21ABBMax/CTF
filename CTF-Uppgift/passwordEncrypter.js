@@ -1,3 +1,5 @@
+// A non-decodable function
+
 export async function encryptPassword(input) {
 	const encoder = new TextEncoder();
 	const data = encoder.encode(input);
