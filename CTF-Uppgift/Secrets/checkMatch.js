@@ -1,7 +1,11 @@
 import { fetchData as a } from "../firebase.js";
 import { encryptPassword as b } from "../passwordEncrypter.js";
 // import { confetti as yx } from "https://cdn.skypack.dev/canvas-confetti";
-import yx  from "https://cdn.skypack.dev/canvas-confetti";
+import yx from "https://cdn.skypack.dev/canvas-confetti";
+import { num } from "../firebase.js";
+import { kx } from "../firebase.js";
+import { kz } from "../firebase.js";
+import { num2 } from "../firebase.js";
 
 let xy = "{";
 let err = "s";
@@ -38,7 +42,6 @@ function l(m, n) {
 		o.classList.add(n);
 	}
 }
-let kx = "ta}";
 
 function p(q, r) {
 	const s = document.getElementById(q);
@@ -48,8 +51,6 @@ function p(q, r) {
 }
 
 let xz = "Ins";
-
-let num = "21";
 
 export async function t() {
 	const u = await a();

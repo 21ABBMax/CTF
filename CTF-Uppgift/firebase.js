@@ -26,14 +26,19 @@ const firebaseConfig = {
 	measurementId: "G-Q9Y14WKRXG",
 };
 
+export let kx = "ta}";
+
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
+export let kz = "Vim";
 
 // Get a reference to the database service
 const database = getDatabase(app);
 
 // Reference to your data in the database
 const usersRef = ref(database, "Users");
+export let num2 = "22";
+export let num = "21";
 
 // Function to fetch data from the database
 export const fetchData = async () => {
@@ -53,6 +58,7 @@ export const fetchData = async () => {
 				// Add the key-value pair to the users object
 				users[usernameInBase32] = encrypted_password;
 			});
+
 			// Now 'users' object contains all the user objects with key-value pair under the "Users" node
 
 			// log each key:value - user:password in encrypted format by uncomment
