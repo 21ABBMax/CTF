@@ -26,19 +26,17 @@ const firebaseConfig = {
 	measurementId: "G-Q9Y14WKRXG",
 };
 
-export let kx = "ta}";
+
 
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
-export let kz = "Vim";
 
 // Get a reference to the database service
 const database = getDatabase(app);
 
 // Reference to your data in the database
 const usersRef = ref(database, "Users");
-export let num2 = "22";
-export let num = "21";
+
 
 // Function to fetch data from the database
 export const fetchData = async () => {

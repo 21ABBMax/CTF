@@ -116,10 +116,10 @@ main {
 
 .warning {
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 700;
 	position: absolute;
-	bottom: 175px;
-	left: 60px;
+	bottom: 250px;
+	left: 85px;
 	margin-top: 50px;
 	height: 20px;
 	color: rgb(0, 0, 0);
@@ -201,8 +201,8 @@ main {
 }
 
 .errorMessage {
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
 	position: absolute;
 	bottom: 50px;
 	background-image: url("https://t3.ftcdn.net/jpg/02/77/81/38/360_F_277813859_AGKg1oERFXvshfrkf8tJfcWO2X5xSz2T.jpg");

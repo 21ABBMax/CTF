@@ -1,14 +1,8 @@
-import { fetchData as a } from "../firebase.js";
-import { encryptPassword as b } from "../passwordEncrypter.js";
-// import { confetti as yx } from "https://cdn.skypack.dev/canvas-confetti";
+import { fetchData as a } from "./firebase.js";
+import { encryptPassword as b, encryptPassword } from "./passwordEncrypter.js";
 import yx from "https://cdn.skypack.dev/canvas-confetti";
-import { num } from "../firebase.js";
-import { kx } from "../firebase.js";
-import { kz } from "../firebase.js";
-import { num2 } from "../firebase.js";
 
-let xy = "{";
-let err = "s";
+
 function c(d) {
 	const e = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 	let f = "",
@@ -35,7 +29,7 @@ function c(d) {
 	}
 	return g;
 }
-let ff = "0";
+
 function l(m, n) {
 	const o = document.getElementById(m);
 	if (!o.classList.contains(n)) {
@@ -50,7 +44,7 @@ function p(q, r) {
 	}
 }
 
-let xz = "Ins";
+
 
 export async function t() {
 	const u = await a();
@@ -67,7 +61,7 @@ export async function t() {
 		C.classList.add("errorMessage");
 		document.body.appendChild(C);
 		const q = document.createElement("p");
-		q.textContent = num.concat(ff, err, xy, xz, kx);
+		q.textContent = "Flag: 210s" + "{" + x + "}";
 		q.classList.add("warning");
 		document.body.appendChild(q);
 		yx();
